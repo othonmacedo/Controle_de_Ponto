@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Ponto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <header>
+        <h1>Controle de Ponto</h1>
+    </header>
+
+    <body>
+        <div id="login">
+            <h2>Login</h2>
+            <label>Digite seu PIN:</label>
+
+            <input type="password" id="pinInput">
+            <button onclick="login()">Entrar</button>
+            <div class="divider">
+                <button class="btn" onclick="registrarBiometria()">Registrar Biometria</button>
+                <button class="btn" onclick="loginBiometria()">Entrar com Biometria</button>
+                <button class="btn" onclick="configurarPIN(prompt('Digite o novo PIN:'))">Alterar PIN</button>
+            </div>
+        </div>
+
+
+        <div id="app" style="display:none;">
+            <!-- Aqui fica todo o conteúdo do app (menu, relatórios, etc.) -->
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+
+
+    <main>
+        <div class="menu">
+            <button onclick="registrarPonto('Entrada')">Registrar Entrada</button>
+            <button onclick="registrarPonto('Saída')">Registrar Saída</button>
+            <!-- <button onclick="registrarPonto('Almoço Início')">Início Almoço</button> -->
+            <!-- <button onclick="registrarPonto('Almoço Fim')">Fim Almoço</button> -->
+            <button onclick="registrarPonto('Descanso Início')">Início Descanso</button>
+            <button onclick="registrarPonto('Descanso Fim')">Fim Descanso</button>
+            <button onclick="configurarPIN(prompt('Digite o novo PIN:'))">Alterar PIN</button>
+            <button onclick="relatorioDiario()">Relatório Diário</button>
+            <button onclick="relatorioSemanal()">Relatório Semanal</button>
+            <button onclick="relatorioMensal()">Relatório Mensal</button>
+            <button onclick="exportarCSV()">Exportar CSV</button>
+        </div>
+
+        <div class="almoco">
+            <h2>Controle de Almoço</h2>
+            <label>Hora de saída:</label>
+            <input type="time" id="horaAlmoco">
+            <label>Tempo máximo (min):</label>
+            <input type="number" id="tempoAlmoco" value="60">
+            <button onclick="controlarAlmoco()">Iniciar Controle</button>
+        </div>
+
+        <section id="relatorio"></section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

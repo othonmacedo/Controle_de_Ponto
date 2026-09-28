@@ -51,7 +51,11 @@
             <button onclick="relatorioSemanal()">Relatório Semanal</button>
             <button onclick="relatorioMensal()">Relatório Mensal</button>
             <button onclick="exportarCSV()">Exportar CSV</button>
+            <button onclick="limparRegistros()">Limpar Registros</button>
+
         </div>
+
+        <canvas id="graficoHoras" width="400" height="200"></canvas>
 
         <div class="almoco">
             <h2>Controle de Almoço</h2>
@@ -66,6 +70,8 @@
     </main>
 
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 
 </html>
